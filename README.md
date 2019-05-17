@@ -1,13 +1,13 @@
-#  SAP Commerce - Developer Training 01 - Exercises
+#  SAP Commerce - Developer Training 02 - Exercises
 
 ### Prerequisites
 1. Developer laptop, minimum memory of  8GB, 16GB recommended
-2. Access to the latest version of SAP Commerce installtion zip file (1808)
+2. Access to the latest version of SAP Commerce installtion zip file (1811)
 
 ### Exercises
-* [Exercise 1   - Installation & Configuration](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-01)
-* [Exercise 2   - Data Modeling](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
-* [Exercise 3   - Importing Data](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
+* [Exercise 1   - Addons](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-01)
+* [Exercise 2   - Backoffice - Changes](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
+* [Exercise 3   - Backoffice - Custom](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
 * [Exercise 4   - Essential & Project Data](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
 * [Exercise 5   - Service Layer](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
 * [Exercise 6   - Unit Tests](https://github.com/dbeale-epam/developer-training-01/tree/master/exercise-02)
