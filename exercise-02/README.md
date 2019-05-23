@@ -8,7 +8,7 @@ For this exercise we are going explore the interactive documenation of OCC
 2. Ensure you can navigate to `https://localhost:9002/rest/v2/swagger-ui.html`
 3. Visit either electronics or apparel site and register a user
 
-## Add 
+## Add OAuth2 Credentials
 
 We need to create some OAuth2 client credentials
 
@@ -19,4 +19,12 @@ INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;sc
                                 ;client-side              ;hybris            ;basic        ;implicit,client_credentials                                     ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_implicit_callback;
                                 ;mobile_android           ;hybris            ;basic        ;authorization_code,refresh_token,password,client_credentials    ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_callback;
 ```
-3. 
+
+## Explore the documentation
+1. Try some calls that do not require authentication - Products 
+2. Try some calls that require a User parameter - e.g. Carts, enter registered user-id into call parameter and within Authorize section
+3. Try some calls that need extra authentication - Promotions - populate Basic Auth with 
+```
+clientid : mobile_android
+secret : secret
+```
