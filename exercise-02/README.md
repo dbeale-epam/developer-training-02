@@ -13,11 +13,16 @@ For this exercise we are going explore the interactive documenation of OCC
 We need to create some OAuth2 client credentials
 
 1. Got to Console; Impxex Import
-2. Import the following details:
+2. Import the following client details ROLE_CLIENT:
 ```
 INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;scope        ;authorizedGrantTypes                                    ;authorities             ;clientSecret    ;registeredRedirectUri
                                 ;client-side              ;hybris            ;basic        ;implicit,client_credentials                                     ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_implicit_callback;
                                 ;mobile_android           ;hybris            ;basic        ;authorization_code,refresh_token,password,client_credentials    ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_callback;
+```
+3. Import the following client details ROLE_TRUSTED_CLIENT:
+```
+INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;scope        ;authorizedGrantTypes                                            ;authorities             ;clientSecret    ;registeredRedirectUri 
+                                ;trusted_client           ;hybris            ;extended     ;authorization_code,refresh_token,password,client_credentials    ;ROLE_TRUSTED_CLIENT     ;secret;         ;
 ```
 
 ## Explore the documentation
