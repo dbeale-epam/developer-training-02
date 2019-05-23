@@ -26,10 +26,20 @@ INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;sc
 ```
 
 ## Explore the documentation
+
+### anonymous calls
 1. Try some calls that do not require authentication - Products 
+
+### User calls
 2. Try some calls that require a User parameter - e.g. Carts, enter registered user-id into call parameter and within Authorize section
-3. Try some calls that need extra authentication - Promotions - populate Basic Auth with 
 ```
 clientid : mobile_android
+secret : secret
+```
+
+### Trusted authentication cals
+3. Try some calls that need extra authentication - Promotions - credential in flow : / applicatio 
+```
+clientid : trusted_client
 secret : secret
 ```
