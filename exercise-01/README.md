@@ -28,6 +28,6 @@ Now need to install the Addon for the storefront
 ## Now make some changes to  front-end components
 
 1.  Note the *.txt files within the acceleratoraddon folder
-2.  Modify contents of a file
+2.  Modify the contents of a file
 3.  Build the system with `ant clean all`
-4.  Note whole the files have been copied over to the target extension
+4.  Note how the files have been copied over to the target extension
