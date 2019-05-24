@@ -27,7 +27,7 @@ Now need to install the Addon for the storefront
 
 ## Now make some changes to  front-end components
 
-1. Download and install the latest version of Eclipse from [here](https://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-ee-developers)
-2. Click on this [link](https://marketplace.eclipse.org/content/sap-hybris-commerce-development-tools-eclipse) and drag the "Install" button onto your Eclipse IDE
-3. Choose File->Import-> [y] hybris -> Import Platform
-4. Point to the location of your **bin/platform** folder, ensure 'Tomcat start/stop multi-thread' option is disabled
+1.  Note the *.txt files within the acceleratoraddon folder
+2.  Modify contents of a file
+3.  Build the system with `ant clean all`
+4.  Note whole the files have been copied over to the target extension
