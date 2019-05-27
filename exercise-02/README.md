@@ -1,5 +1,5 @@
 # Exercise 02 - Backoffice Framework
-## Expected Duration - 30 Minutes
+## Expected Duration - 15 Minutes
 
 For this exercise we are going explore the Backoffice Orchestration
 
@@ -19,7 +19,7 @@ backoffice.cockpitng.development.mode=true
 
 1. Rebuild the application
 2. Login into Backoffice
-3. Navigate to breadbaord mode ``https://34.240.233.16:9002/backoffice/?mode=breadboard``
+3. Navigate to breadboard mode ``https://localhost:9002/backoffice/?mode=breadboard``
 4. Explore the various Widgets
 5. Revert back to standard backoffice
 6. Press F4 and Edit Admin layout - close the West part of the page

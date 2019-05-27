@@ -1,45 +1,112 @@
-# Exercise 02 - OCC Interactive Documentation
-## Expected Duration - 15 Minutes
+# Exercise 03 - Backoffice Framework Extension 
+## Expected Duration - 30 Minutes
 
-For this exercise we are going explore the interactive documenation of OCC
+For this exercise we are going create a new Backoffice extension and a widget
 
-## Prerequsite
-1. Ensure you have a working local copy of B2C Accelerator - which includes ycommercewebservices
-2. Ensure you can navigate to `https://localhost:9002/rest/v2/swagger-ui.html`
-3. Visit either electronics or apparel site and register a user
 
-## Add OAuth2 Credentials
+## Create & Install the Backoffice extension
 
-We need to create some OAuth2 client credentials
+We now want to create a new extenstion
 
-1. Got to Console; Impxex Import
-2. Import the following client details ROLE_CLIENT:
+1. Run `ant extgen`, choose `ybackoffice` as template, name `mybackoffice`, package `org.officeco`
+2. Accept all default options (including `sample widget`)
+3. Browse the folders, you will notice a new extension called `mybackoffice` in the folder `custom`
+4. We now have to add our new addon to `config/localextensions.xml`
+5. Add the following block to the file
+
+```xml
+ <!-- Your new extension -->
+ <extension name="mybackoffice"/>  
 ```
-INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;scope        ;authorizedGrantTypes                                    ;authorities             ;clientSecret    ;registeredRedirectUri
-                                ;client-side              ;hybris            ;basic        ;implicit,client_credentials                                     ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_implicit_callback;
-                                ;mobile_android           ;hybris            ;basic        ;authorization_code,refresh_token,password,client_credentials    ;ROLE_CLIENT             ;secret          ;http://localhost:9001/authorizationserver/oauth2_callback;
+6. Remove `ybackoffice` template from `localextensions.xml`
+7. Run `ant clean all`
+8. You should now see your new backoffice extenstion in list of available cockpits
+9. Look at the sample widget, modify and experiement
+
+
+## Create a new widget
+
+We now want to create a new widget
+
+10. In `mybackoffice/backoffice/resources/widgets` directory create a new folder called `mychat`
+## Widget Definitio 
+11. Create a file `definition.xml`
+12. Add the the following contents
+
 ```
-3. Import the following client details ROLE_TRUSTED_CLIENT:
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+ 
+<widget-definition id="org.myextension.widgets.mychat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd">
+	<name>My Chat</name>
+	<description>My chat widget.</description>
+
+	<sockets>
+		<input type="java.lang.String" id="incomingMsg"/>
+		<output type="java.lang.String" id="outgoingMsg"/>
+	</sockets>
+	
+	<keywords>
+		<keyword>Chat</keyword>
+	</keywords>
+	
+</widget-definition>
+
+``` 
+
+## Widget View 
+13. Create a ZUL view file called `mychat.zul`
+14. Add button, text box etc. 
+
 ```
-INSERT_UPDATE OAuthClientDetails;clientId[unique=true]    ;resourceIds       ;scope        ;authorizedGrantTypes                                            ;authorities             ;clientSecret    ;registeredRedirectUri 
-                                ;trusted_client           ;hybris            ;extended     ;authorization_code,refresh_token,password,client_credentials    ;ROLE_TRUSTED_CLIENT     ;secret;         ;
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<widget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.zkoss.org/2005/zul">
+	<div>
+		<textbox id="msgInput"/>
+		<button id="sendBtn" label="Send"/>
+	</div>
+	<div>
+		<label id="lastMsgLabel" value="No message."></label>
+	</div>
+</widget>
 ```
 
-## Explore the documentation
+## Controller
+13. In the `mybackoffice/backoffice/src/org/mybackoffice` directory, create a controller with the following package name: `org.mybackoffice.widgets.mychat`. It should extend the DefaultWidgetController. Call it MyChatController
 
-### anonymous calls
-1. Try some calls that do not require authentication - Products 
 
-### User calls
-2. Try some calls that require a User parameter - e.g. Carts, enter registered user-id into call parameter and within Authorize section
 ```
-clientid : mobile_android
-secret : secret
+public class MyChatController extends DefaultWidgetController
+{
+	private Label lastMsgLabel;
+	private Textbox msgInput;
+
+	@ViewEvent(componentID = "sendBtn", eventName = Events.ON_CLICK)
+	public void sendMsg()
+	{
+		sendOutput("outgoingMsg", msgInput.getText());
+
+	}
+
+	@SocketEvent(socketId = "incomingMsg")
+	public void updateTranscript(final String msg)
+	{
+		lastMsgLabel.setValue(msg);
+	}
+}
 ```
 
-### Trusted authentication cals
-3. Try some calls that need extra authentication - Promotions - credential in flow : / applicatio 
+14. Add the controller class to the widget definition
+
 ```
-clientid : trusted_client
-secret : secret
+<!-- ... -->
+   <controller class="org.mybackoffice.widgets.mychat.MyChatController"/>
+<!-- ... -->
+</widget-definition>
 ```
+15. Run `ant clean all`
+
+# Add widget to the application
+16. Using the Application Orchestrator mode, add two copies of your newly created chat widget inside a layout that allows multiple widgets.
+
+
