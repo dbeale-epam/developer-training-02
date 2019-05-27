@@ -9,6 +9,6 @@
 * [Exercise 2   - Backoffice - Orchestration](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-02)
 * [Exercise 3   - Backoffice - Extension/Widget](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-03)
 * [Exercise 4   - OCC Interactive Documentation](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-04)
-* [Exercise 5   - Promotoions](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-05)
+* [Exercise 5   - Promotions](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-05)
   
-  
+
