@@ -29,9 +29,10 @@ We now want to create a new extenstion
 We now want to create a new widget
 
 10. In `mybackoffice/backoffice/resources/widgets` directory create a new folder called `mychat`
-## Widget Definitio 
-11. Create a file `definition.xml`
-12. Add the the following contents
+    
+## Widget Definition
+1.  Create a file `definition.xml`
+2.  Add the the following contents
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
@@ -72,7 +73,7 @@ We now want to create a new widget
 ```
 
 ## Controller
-13. In the `mybackoffice/backoffice/src/org/mybackoffice` directory, create a controller with the following package name: `org.mybackoffice.widgets.mychat`. It should extend the DefaultWidgetController. Call it MyChatController
+13. In the `mybackoffice/backoffice/src/org/mybackoffice` directory, create a controller with the following package name: `org.officeco.widgets.mychat`. It should extend the DefaultWidgetController. Call it MyChatController
 
 
 ```
@@ -100,7 +101,7 @@ public class MyChatController extends DefaultWidgetController
 
 ```
 <!-- ... -->
-   <controller class="org.mybackoffice.widgets.mychat.MyChatController"/>
+   <controller class="org.officeco.widgets.mychat.MyChatController"/>
 <!-- ... -->
 </widget-definition>
 ```
