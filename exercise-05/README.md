@@ -1,15 +1,21 @@
-# Exercise 05 - Create a Promotion
+# Exercise 05 - Custom OCC  Extension 
 ## Expected Duration - 15 Minutes
 
-For this exercise we are going create a BOGOF promotion.
-If a custom buys two pair of sunglasses, the cheapest pair is free
+For this exercise we are going create a new OCC extension
 
+## Create & Install the Backoffice extension
 
-## 
-1. Got to the Promotions area of the backoffice admin 
-2. Choose a Buy_x_get_y_free from the Promotion Templates
-3. Modify the information, messages, conditions and actions to match the requirement
-4. Save and publish the promotion
-5. Test the promotion out in the Apparel UK site
-6. Modify the promotion to now require a unique coupone code
-   
+We now want to create a new extenstion
+
+1. Run `ant extgen`, choose `ycommercewebservices` as template, name `mywebservices`, package `org.officeco`
+2. Accept all default options 
+3. Browse the folders, you will notice a new extension called `mywebservices` in the folder `custom`
+4. We now have to add our new addon to `config/localextensions.xml`
+5. Add the following block to the file
+
+```xml
+ <!-- Your new extension -->
+ <extension name="mywebservices"/>  
+```
+6. Remove `ycommercewebservices` template from `localextensions.xml`
+7. Run `ant clean all`

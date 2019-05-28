@@ -1,4 +1,4 @@
-# Exercise 02 - OCC Interactive Documentation
+# Exercise 04 - OCC Interactive Documentation
 ## Expected Duration - 15 Minutes
 
 For this exercise we are going explore the interactive documenation of OCC
