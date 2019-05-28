@@ -49,6 +49,8 @@ We now want to create a new widget
 	<keywords>
 		<keyword>Chat</keyword>
 	</keywords>
+
+	<controller class="org.officeco.widgets.MyChatController" />
 	
 </widget-definition>
 
