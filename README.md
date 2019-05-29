@@ -11,6 +11,10 @@
 * [Exercise 4   - OCC Interactive Documentation](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-04)
 * [Exercise 5   - OCC Extension](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-05)
 * [Exercise 6   - Promotions](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-06)
+* [Exercise 7   - Cronjob](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-07)
+* [Exercise 8   - Worklow](https://github.com/dbeale-epam/developer-training-02/tree/master/exercise-08)
+  
+  
   
   
 
